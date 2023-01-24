@@ -117,10 +117,7 @@ li {
   align-items: flex-start !important;
 }
 
-/* .container {
-  max-width: none !important;
-  width: 85% !important;
-} */
+
 
 .card.horizontal .card-image {
   max-width: none !important;
