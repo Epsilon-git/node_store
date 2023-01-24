@@ -1,0 +1,166 @@
+<div class="my_container">
+
+  <h3 class="title">За недвижимостью – в Тихий дом</h3>
+
+  <div class="filter">
+
+    {{! Тип недвижимости }}
+    <div class="myContainer">
+      <div class="input-field m0">
+        <select id="type" name="type">
+          <option value="" disabled selected>Тип недвижимости</option>
+          <option value="Все">Все</option>
+          <option value="Квартира">Квартира</option>
+          <option value="Дом">Дом</option>
+        </select>
+      </div>
+    </div>
+    {{!  }}
+
+    {{! Кол-во комнат }}
+    <div class="myContainer">
+      <div class="input-field m0">
+        <select id="num_rooms" name="num_rooms">
+          <option value="" disabled selected>Кол-во комнат</option>
+          <option value="Все">Все</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 и более</option>
+        </select>
+      </div>
+    </div>
+    {{!  }}
+
+    {{! Цена }}
+    <div class="myContainer price_css">
+
+      {{! Нижняя цена }}
+      <div class="input-field m0">
+        <input
+          id="price_lower"
+          name="price_lower"
+          placeholder="Цена от"
+          type="number"
+          class="validate"
+        />
+      </div>
+      {{!  }}
+
+      <label class="mh10">–</label>
+
+      {{! Верхняя цена }}
+      <div class="input-field m0">
+        <input
+          id="price_upper"
+          name="price_upper"
+          placeholder="до"
+          type="number"
+          class="validate"
+        />
+      </div>
+      {{!  }}
+
+    </div>
+    {{!  }}
+
+    {{! Кнопка }}
+    <button class="btn btn-primary blue mh10" onclick="filter()">
+      Показать
+    </button>
+    {{!  }}
+
+  </div>
+
+</div>
+
+{{! Кол-во объявлений }}
+{{#if items.length}}
+
+  <h4 style="color: white;">
+    Найдено
+    {{items.length}}
+    объявлений(я)
+  </h4>
+
+  <div id="items" class="row">
+
+    {{! Карточка }}
+    {{#each items}}
+
+      <div class="item">
+
+        <a href="/item/{{_id}}">
+
+          <div class="card horizontal hoverable">
+
+            <div class="card-image my-card-image">
+              <img src={{img.[0]}} alt={{title}} />
+            </div>
+
+            <div class="card-stacked">
+
+              <div class="card-content" style="font-size: 25px;">
+
+                <div class="col s12">
+                  {{space}}м<sup>2</sup>,
+                  {{title}}
+                </div>
+
+                <div class="row">
+
+                  <div class="col s6">
+                    {{type}}
+                    <br />
+                    {{num_rooms}}
+                    комнат(а)
+                  </div>
+
+                  <div class="col s6 align-c price">
+                    {{price}}
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </a>
+      </div>
+
+    {{/each}}
+
+  </div>
+
+  {{!  }}
+
+{{else}}
+  <section class="my_container align-c m10-t">
+    <h5 class="m100">Объявлений пока нет</h5>
+  </section>
+
+{{/if}}
+
+{{!-- {{#if @root.isAuth}}
+  <div class="card-action">
+
+
+    <form action="/favourite/add" method="POST">
+      <input type="hidden" name="id" value="{{_id}}" />
+
+      <button
+        onclick="M.toast({html: 'Добавлено в избранное'})"
+        type="submit"
+        class="waves-effect waves-teal btn-flat"
+      >
+        <i class="fa fa-heart" style="color: #e91e63;"></i>
+
+      </button>
+    </form>
+
+  </div>
+
+{{/if}} --}}

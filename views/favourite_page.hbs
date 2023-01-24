@@ -1,0 +1,111 @@
+<h1 style="color: white;">
+  Избранное
+</h1>
+
+<div id="favourite">
+
+  {{#if favourite.length}}
+
+    <div id="items" class="row">
+
+      {{! Карточка }}
+      {{#each favourite}}
+
+        <div class="item">
+
+          <div class="card horizontal hoverable">
+
+            <a href="/item/{{id}}">
+              <div class="card-image my-card-image">
+                <img src="{{img}}" alt="{{title}}" />
+              </div>
+            </a>
+
+            <div class="card-stacked" style="justify-content: space-between">
+
+              <a href="/item/{{id}}">
+                <div class="card-content" style="font-size: 25px;">
+
+                  <div class="col s12">
+                    {{space}}м<sup>2</sup>,
+                    {{title}}
+                  </div>
+
+                  <div class="row">
+
+                    <div class="col s6">
+                      {{type}}
+                      <br />
+                      {{num_rooms}}
+                      комнат(а)
+                    </div>
+
+                    <div class="col s6 align-c price">
+                      {{price}}
+                    </div>
+
+                  </div>
+
+                </div>
+              </a>
+
+              <div class="card-action align-r">
+
+                <button
+                  class="btn js-remove tooltipped transparent"
+                  data-id="{{id}}"
+                  data-position="bottom"
+                  data-tooltip="Удалить из избранных"
+                >
+                  <i
+                    class="fa-solid fa-heart-circle-xmark"
+                    style="color: #b71c1c;"
+                  ></i>
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      {{/each}}
+
+    </div>
+
+  {{else}}
+    <section class="my_container align-c">
+      <h5 class="m100">Избранных объявлений пока нет</h5>
+    </section>
+  {{/if}}
+
+</div>
+
+{{!-- <table>
+      <thead>
+        <tr>
+          <th>Название</th>
+          <th>Цена</th>
+          <th>Действия</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each favourite}}
+          <tr>
+            <td>{{title}}</td>
+            <td>{{price}}</td>
+            <td>
+              <button
+                class="btn btn-small red darken-4 js-remove"
+                data-id="{{id}}"
+              >
+                <i class="fa-solid fa-heart-circle-xmark"></i>
+              </button>
+              <a href="/item/{{id}}">Подробнее</a>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table> --}}

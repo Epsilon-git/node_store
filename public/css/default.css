@@ -1,0 +1,122 @@
+html {
+  font-family: "Inter";
+  font-style: normal;
+}
+
+body {
+  background: linear-gradient(to top, black 0%, transparent 100%),
+    url(background.jpg) !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  display: flex !important;
+  min-height: 100vh !important;
+  flex-direction: column !important;
+}
+
+main {
+  flex: 1 0 auto !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 15px 0;
+}
+
+input.select-dropdown.dropdown-trigger {
+  border-bottom: 0 !important;
+  margin: 0 !important;
+}
+
+input#price_lower,
+input#price_upper {
+  border-bottom: 0 !important;
+  margin: 0 !important;
+  width: 100px !important;
+}
+
+.card-action {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.price_css {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+a {
+  color: black;
+}
+
+/*  */
+.my-card-image {
+  height: 300px !important;
+  width: 300px !important;
+}
+
+.card-image img {
+  object-fit: cover !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+/*  */
+
+.btn {
+  border-radius: 20px !important;
+}
+
+.page-footer {
+  background-color: transparent !important;
+}
+
+a.fill-div {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+
+li {
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-flex-direction: row !important;
+  -ms-flex-direction: row !important;
+  flex-direction: row !important;
+  margin-bottom: 16px !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
+  list-style: none !important;
+}
+
+.my_row {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+}
+
+/* .container {
+  max-width: none !important;
+  width: 85% !important;
+} */
+
+.card.horizontal .card-image {
+  max-width: none !important;
+}

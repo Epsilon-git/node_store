@@ -1,0 +1,45 @@
+@import "css/other.css";
+@import "css/helpers.css";
+@import "css/containers.css";
+@import "css/default.css";
+@import "css/404.css";
+
+/* *************************** */
+
+.title {
+  text-align: center;
+  padding: 40px 0;
+  margin: 0 !important;
+  font-weight: bold;
+}
+
+.my_container {
+  background-color: whitesmoke;
+  border-radius: 5px;
+  padding: 0 20px !important;
+  /* margin-top: 20px; */
+}
+
+.card {
+  border-radius: 10px !important;
+}
+
+.span_title {
+  -webkit-flex: 1 1 220px;
+  -ms-flex: 1 1 220px;
+  flex: 1 1 220px;
+  max-width: 220px;
+  color: #7a7a7a;
+}
+
+.span_title_black {
+  -webkit-flex: 1 1 220px;
+  -ms-flex: 1 1 220px;
+  flex: 1 1 220px;
+  max-width: 220px;
+  color: black;
+}
+
+.span_text {
+  padding-left: 24px;
+}

@@ -1,0 +1,119 @@
+<h3>Редактировать {{item.title}}</h3>
+
+<form action="/items/edit" method="POST">
+  {{! Название }}
+  <div class="input-field">
+    <i class="material-icons prefix">title</i>
+    <input
+      id="title"
+      name="title"
+      type="text"
+      class="validate"
+      value="{{item.title}}"
+      required
+    />
+    <label for="title">Название</label>
+    <span class="helper-text" data-error="Введите название"></span>
+  </div>
+  {{!  }}
+
+  <div class="divider"></div>
+
+  {{! Цена }}
+  <div class="input-field">
+    <i class="material-icons prefix">account_balance_wallet</i>
+    <input
+      id="price"
+      name="price"
+      type="number"
+      class="validate"
+      value="{{item.price}}"
+      min="1"
+      max="999999999"
+      required
+    />
+    <label for="price">Цена</label>
+    <span class="helper-text" data-error="Введите цену"></span>
+  </div>
+  {{!  }}
+
+  <div class="divider"></div>
+
+  {{! Тип }}
+  <div class="input-field">
+    <select id="type" name="type">
+      <option value="Квартира" selected>Квартира</option>
+      <option value="Дом">Дом</option>
+    </select>
+    <label>Тип</label>
+  </div>
+  {{!  }}
+
+  <div class="divider"></div>
+
+  {{! Кол-во комнат }}
+  <div class="input-field">
+    <select id="num_rooms" name="num_rooms">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 и более</option>
+    </select>
+    <label>Кол-во комнат</label>
+  </div>
+  {{!  }}
+
+  <div class="divider"></div>
+
+  {{! Площадь }}
+  <div class="input-field">
+    <input
+      id="space"
+      name="space"
+      type="number"
+      class="validate"
+      value="{{item.space}}"
+      min="1"
+      required
+    />
+    <label for="space">Площадь м<sup>2</sup></label>
+    <span class="helper-text" data-error="Введите площадь"></span>
+  </div>
+  {{!  }}
+
+  <div class="divider"></div>
+
+  {{! Описание }}
+  <div class="input-field">
+    <textarea
+      id="description"
+      name="description"
+      class="materialize-textarea"
+    >{{item.description}}</textarea>
+    <label for="description">Описание</label>
+  </div>
+  {{!  }}
+
+  <div class="divider"></div>
+
+  {{! URL картинки }}
+  <div class="input-field">
+    <i class="material-icons prefix">image</i>
+    <input
+      id="img"
+      name="img"
+      type="text"
+      class="validate"
+      value="{{item.img}}"
+    />
+    <label for="img">URL картинки</label>
+    <span class="helper-text" data-error="Введите url картинки"></span>
+  </div>
+  {{! -------------------------------------------------- }}
+
+  <input type="hidden" name="id" value="{{item._id}}" />
+
+  <button type="submit" class="btn btn-primary">Редактировать</button>
+
+</form>

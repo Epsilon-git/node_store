@@ -1,0 +1,227 @@
+<h1 style="color: white;">
+  Новое объявление
+</h1>
+
+<div class="my_container">
+
+  <section class="section">
+
+    <form action="/add" method="POST" enctype="multipart/form-data">
+
+      <section>
+        <h4>Заголовок объявления</h4>
+
+        <div class="input-field m10">
+          <input
+            value="Название "
+            id="title"
+            name="title"
+            type="text"
+            class="validate"
+            required
+          />
+        </div>
+
+      </section>
+
+      <div class="divider m10"></div>
+
+      <section>
+        <h4>Выберите тип недвижимости</h4>
+
+        {{#each type}}
+          <p>
+            <label class="m10-l">
+              <input name="type" type="radio" value="{{this}}" checked />
+              <span>{{this}}</span>
+            </label>
+          </p>
+        {{/each}}
+
+      </section>
+
+      <div class="divider m10"></div>
+
+      <section>
+        <h4>Количество комнат</h4>
+
+        {{#each num_room}}
+          <p>
+            <label class="m10-l">
+              <input name="num_rooms" type="radio" value="{{this}}" checked />
+              <span>{{this}}</span>
+            </label>
+          </p>
+        {{/each}}
+
+      </section>
+
+      <div class="divider m10"></div>
+
+      <section>
+        <h4>Ремонт</h4>
+
+        {{#each repair}}
+
+          <p>
+            <label class="m10-l">
+              <input name="repair" type="radio" value="{{this}}" checked />
+              <span>{{this}}</span>
+            </label>
+          </p>
+
+        {{/each}}
+
+      </section>
+
+      <div class="divider m10"></div>
+
+      <section>
+        <h4>Описание</h4>
+
+        <div class="input-field m10">
+          <textarea
+            id="description"
+            name="description"
+            class="materialize-textarea"
+          >Пусто</textarea>
+        </div>
+
+      </section>
+
+      <div class="divider m10"></div>
+
+      <section>
+        <h4>Фотографии</h4>
+
+        <div class="file-field input-field">
+
+          <div class="btn">
+            <span>Загрузить</span>
+            <input type="file" name="img" multiple />
+
+          </div>
+          <div class="file-path-wrapper">
+            <input
+              class="file-path validate"
+              type="text"
+              placeholder="Загрузите один или несколько файлов"
+              required
+            />
+          </div>
+        </div>
+
+      </section>
+
+      <div class="divider m10"></div>
+
+      <button class="btn btn-primary">Опубликовать</button>
+
+    </form>
+
+  </section>
+
+</div>
+
+{{!-- {{! Название }}
+      <div class="input-field">
+        <input
+          value="Название "
+          id="title"
+          name="title"
+          type="text"
+          class="validate"
+          required
+        />
+        <label for="title">Название</label>
+      </div>
+      {{!  }}
+
+      {{! Цена }}
+      <div class="input-field">
+        <input
+          id="price"
+          name="price"
+          type="number"
+          class="validate"
+          value="1"
+          min="1"
+          max="999999999"
+          required
+        />
+        <label for="price">Цена</label>
+        <span class="helper-text" data-error="Введите цену"></span>
+      </div>
+      {{!  }}
+
+
+
+      {{! Тип }}
+      <div class="input-field">
+        <select id="type" name="type">
+          <option value="Квартира" selected>Квартира</option>
+          <option value="Дом">Дом</option>
+        </select>
+        <label for="type">Тип</label>
+      </div>
+      {{!  }}
+
+      {{! Кол-во комнат }}
+      <div class="input-field">
+        <select id="num_rooms" name="num_rooms">
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 и более</option>
+        </select>
+        <label>Кол-во комнат</label>
+      </div>
+      {{!  }}
+
+      {{! Площадь }}
+      <div class="input-field">
+        <input
+          id="space"
+          name="space"
+          type="number"
+          class="validate"
+          value="1"
+          min="1"
+          required
+        />
+        <label for="space">Площадь м²</label>
+        <span class="helper-text" data-error="Введите площадь"></span>
+      </div>
+      {{!  }}
+
+      {{! Описание }}
+      <div class="input-field">
+        <textarea
+          id="description"
+          name="description"
+          class="materialize-textarea"
+        >Пусто</textarea>
+        <label for="description">Описание</label>
+      </div>
+      {{!  }}
+
+      {{! URL картинки }}
+      <div class="file-field input-field">
+
+        <div class="btn">
+          <span>Загрузить</span>
+          <input type="file" name="img" multiple />
+
+        </div>
+        <div class="file-path-wrapper">
+          <input
+            class="file-path validate"
+            type="text"
+            placeholder="Загрузите один или несколько файлов"
+            required
+          />
+        </div>
+      </div>
+
+      {{! -------------------------------------------------- }} --}}

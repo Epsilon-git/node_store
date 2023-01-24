@@ -1,0 +1,173 @@
+<div class="row my_row">
+
+  <div class="my_container col s8">
+
+    {{!  }}
+    <section class="section">
+      <h4>{{item.title}}, {{item.space}} м² </h4>
+    </section>
+    {{!  }}
+
+    {{!  }}
+
+    {{#if @root.isAuth}}
+      <section class="section">
+
+        <form action="/favourite/add" method="POST">
+          <input type="hidden" name="id" value="{{item._id}}" />
+          <button
+            class="btn tooltipped transparent m10"
+            type="submit"
+            onclick="M.toast({html: 'Добавлено в избранное'})"
+            data-id="{{item._id}}"
+            data-position="bottom"
+            data-tooltip="В избранное"
+            style="display: flex;"
+          >
+            <i
+              class="fa-solid fa-heart-circle-plus"
+              style="color: #e91e63;"
+            ></i>
+            <div class="mh10" style="color: black;">В избранное</div>
+          </button>
+        </form>
+
+      </section>
+    {{/if}}
+    {{!  }}
+
+    <div class="divider m10"></div>
+
+    {{!  }}
+    <section class="section p10">
+      <div class="owl-carousel owl-theme">
+        {{#each item.img}}
+          <img src={{this}} />
+        {{/each}}
+      </div>
+    </section>
+    {{!  }}
+
+    {{!  }}
+    <div class="divider m10"></div>
+
+    <section class="section">
+
+      <h5>Общая информация</h5>
+
+      <div class="p10">
+
+        <li>
+          <span class="span_title">Тип жилья</span>
+          <span class="span_text">Новостройка</span>
+        </li>
+
+        <li>
+          <span class="span_title">Площадь комнат</span>
+          <span class="span_text">19.2-15.2 м²</span>
+        </li>
+
+        <li>
+          <span class="span_title">Санузел</span>
+          <span class="span_text">1</span>
+        </li>
+
+        <li>
+          <span class="span_title">Отделка</span>
+          <span class="span_text">Нет</span>
+        </li>
+
+      </div>
+
+    </section>
+    {{!  }}
+
+    <div class="divider m10"></div>
+
+    {{!  }}
+    <section class="section">
+      <h5>Описание квартиры</h5>
+
+      <li class="p10">
+        <span>{{item.description}}</span>
+      </li>
+
+    </section>
+    {{!  }}
+
+  </div>
+
+  <div class="my_container col s4 m10-l">
+    <section class="section">
+
+      <span class="span_title">Просмотренно 1235 раз</span>
+
+      <h4 class="price">{{item.price}}</h4>
+
+      <span class="span_title">50 000 ₽/м²</span>
+
+      <div class="divider m10"></div>
+
+      <button class="btn w100" style="background-color: #ffcf26; color:black">
+        Показать почту
+      </button>
+
+    </section>
+
+  </div>
+
+</div>
+
+{{!-- <h3>{{item.title}}</h3>
+
+<div class="row">
+
+  <div class="col s12 m4 l3">
+    <!-- Note that "m4 l3" was added -->
+    <div>
+      <img src="{{item.img}}" alt="{{item.title}}" />
+    </div>
+
+    <ul class="collection">
+
+      <li class="collection-item">
+        <h5>Почта: </h5>
+        <div>{{email}}</div>
+      </li>
+
+    </ul>
+
+  </div>
+
+  <div class="col s12 m8 l9">
+    <!-- Note that "m8 l9" was added -->
+    <ul class="collection">
+      <li class="collection-item">
+        <h5>Цена: </h5>
+        <div class="price">{{item.price}}</div>
+      </li>
+
+      <li class="collection-item">
+        <h5>Тип недвижимости: </h5>
+        <div>{{item.type}}</div>
+      </li>
+
+      <li class="collection-item">
+        <h5>Площадь: </h5>
+        <div>{{item.space}} м<sup>2</sup></div>
+      </li>
+
+      <li class="collection-item">
+        <h5>Кол-во комнат: </h5>
+        <div>{{item.num_rooms}}</div>
+      </li>
+
+      <li class="collection-item">
+        <h5>Описание: </h5>
+        <div>{{item.description}}</div>
+      </li>
+
+    </ul>
+  </div>
+
+</div> --}}

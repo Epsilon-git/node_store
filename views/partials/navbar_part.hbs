@@ -1,0 +1,69 @@
+<nav class="z-depth-0 transparent">
+  <div class="nav-wrapper container">
+
+    <a href="/" class="brand-logo">
+      <i class="fa fa-house"></i>
+      Тихий дом
+    </a>
+
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+      {{#if isAuth}}
+
+        {{! Мои объявления }}
+        <li>
+          <a href="/items" class="tooltipped" data-position="bottom" data-tooltip="Мои объявления">
+            <i class="fa fa-clipboard-list"></i>
+          </a>
+        </li>
+        {{!  }}
+
+        {{! Избранное }}
+        <li>
+          <a href="/favourite" class="tooltipped" data-position="bottom" data-tooltip="Избранное">
+            <i class="fa fa-heart" style="color: #e91e63;"></i>
+          </a>
+        </li>
+        {{!  }}
+
+        {{! Добавить новое объявление }}
+        <li>
+          <a href="/add" class="tooltipped" data-position="bottom" data-tooltip="Добавить своё объявление">
+            <i class="fa-solid fa-plus" style="color: #00b341;"></i>
+          </a>
+        </li>
+        {{!  }}
+
+        {{! Выйти с акканута }}
+        <li>
+          <a href="/auth/logout" class="align-c">
+            <i class="fa fa-right-from-bracket mh10"></i>
+            Выйти
+          </a>
+        </li>
+        {{!  }}
+
+      {{else}}
+
+        {{! Войти в акканут }}
+        <li>
+          <a class="modal-trigger align-c" href="#auth_modal">
+            <i class="fa-solid fa-right-to-bracket mh10"></i>
+            Войти
+          </a>
+        </li>
+        {{!  }}
+
+        {{! Модальное окно авторизаии/регистрации }}
+        <div id="auth_modal" class="modal">
+          <div class="modal-content">
+            {{> auth_part }}
+          </div>
+        </div>
+        {{!  }}
+
+      {{/if}}
+
+    </ul>
+  </div>
+</nav>
