@@ -8,6 +8,7 @@
 
     <form action="/add" method="POST" enctype="multipart/form-data">
 
+      {{! Заголовок объявления }}
       <section>
         <h4>Заголовок объявления</h4>
 
@@ -21,11 +22,12 @@
             required
           />
         </div>
-
       </section>
+      {{!  }}
 
       <div class="divider m10"></div>
 
+      {{! Выберите тип недвижимости }}
       <section>
         <h4>Выберите тип недвижимости</h4>
 
@@ -39,9 +41,11 @@
         {{/each}}
 
       </section>
+      {{!  }}
 
       <div class="divider m10"></div>
 
+      {{! Количество комнат }}
       <section>
         <h4>Количество комнат</h4>
 
@@ -55,9 +59,11 @@
         {{/each}}
 
       </section>
+      {{!  }}
 
       <div class="divider m10"></div>
 
+      {{! Ремонт }}
       <section>
         <h4>Ремонт</h4>
 
@@ -73,9 +79,62 @@
         {{/each}}
 
       </section>
+      {{!  }}
 
       <div class="divider m10"></div>
 
+      {{! Об объекте }}
+      <section class="section">
+        <h4>Об объекте</h4>
+
+        <div class="m10-l">
+
+          <li>
+            <span class="span_title">Этаж</span>
+
+            <div class="myContainer">
+              <input class="border_remove w3em" type="number" name="" id="" />
+            </div>
+
+          </li>
+
+          <li>
+            <span class="span_title">Этажей в доме</span>
+
+            <div class="myContainer">
+              <input class="border_remove w3em" type="number" name="" id="" />
+            </div>
+
+          </li>
+
+          <li>
+            <span class="span_title">Этаж</span>
+
+            <div class="myContainer">
+              <input class="border_remove w3em" type="number" name="" id="" />
+            </div>
+
+          </li>
+
+          <li>
+            <span class="span_title">Площадь</span>
+
+            <div class="myContainer">
+              <input class="border_remove w3em" type="number" name="" id="" />
+            </div>
+
+            <span>м²</span>
+
+          </li>
+
+        </div>
+
+      </section>
+      {{!  }}
+
+      <div class="divider m10"></div>
+
+      {{! Описание }}
       <section>
         <h4>Описание</h4>
 
@@ -88,9 +147,11 @@
         </div>
 
       </section>
+      {{!  }}
 
       <div class="divider m10"></div>
 
+      {{! Фотографии }}
       <section>
         <h4>Фотографии</h4>
 
@@ -112,6 +173,7 @@
         </div>
 
       </section>
+      {{!  }}
 
       <div class="divider m10"></div>
 

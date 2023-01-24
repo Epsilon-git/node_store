@@ -25,10 +25,10 @@
 }
 
 .span_title {
-  -webkit-flex: 1 1 220px;
-  -ms-flex: 1 1 220px;
-  flex: 1 1 220px;
-  max-width: 220px;
+  -webkit-flex: 1 1 150px;
+  -ms-flex: 1 1 150px;
+  flex: 1 1 150px;
+  max-width: 150px;
   color: #7a7a7a;
 }
 

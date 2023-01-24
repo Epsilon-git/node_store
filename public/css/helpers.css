@@ -6,6 +6,22 @@
   width: 100% !important;
 }
 
+.w2em {
+  width: 2em !important;
+}
+
+.w3em {
+  width: 3em !important;
+}
+
+.w4em {
+  width: 4em !important;
+}
+
+.w5em {
+  width: 5em !important;
+}
+
 .mh10 {
   margin: 0 10px !important;
 }
