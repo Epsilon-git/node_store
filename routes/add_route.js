@@ -20,6 +20,9 @@ router.post("/", auth, async (req, res) => {
     console.log("req.body");
     console.log(req.body);
 
+    console.log("req.files");
+    console.log(req.files);
+
     // if (req.files) {
     //   var paths = req.files.map((file) => "/" + file.path);
     // }

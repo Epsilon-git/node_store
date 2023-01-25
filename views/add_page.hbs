@@ -12,16 +12,7 @@
       <section>
         <h4>Заголовок объявления</h4>
 
-        <div class="input-field m10-l">
-          <input
-            value="Название "
-            id="title"
-            name="title"
-            type="text"
-            class="validate"
-            required
-          />
-        </div>
+        <input class="m10-l" name="title" value="Название " required />
       </section>
       {{!  }}
 
@@ -89,43 +80,50 @@
 
         <div class="m10-l">
 
+          {{! Этаж }}
           <li>
             <span class="span_title">Этаж</span>
-
             <div class="myContainer">
-              <input class="border_remove w3em" type="number" name="" id="" />
+              <input
+                class="border_remove w4em"
+                type="number"
+                name="level"
+                required
+              />
             </div>
-
           </li>
+          {{!  }}
 
+          {{! Этажей в доме }}
           <li>
             <span class="span_title">Этажей в доме</span>
-
             <div class="myContainer">
-              <input class="border_remove w3em" type="number" name="" id="" />
+              <input
+                class="border_remove w4em"
+                type="number"
+                name="total_level"
+                required
+              />
             </div>
-
           </li>
+          {{!  }}
 
-          <li>
-            <span class="span_title">Этаж</span>
-
-            <div class="myContainer">
-              <input class="border_remove w3em" type="number" name="" id="" />
-            </div>
-
-          </li>
-
+          {{! Площадь }}
           <li>
             <span class="span_title">Площадь</span>
 
             <div class="myContainer">
-              <input class="border_remove w3em" type="number" name="" id="" />
+              <input
+                class="border_remove w4em"
+                type="number"
+                name="space"
+                required
+              />
             </div>
 
             <span>м²</span>
-
           </li>
+          {{!  }}
 
         </div>
 
@@ -140,7 +138,6 @@
 
         <div class="input-field m10">
           <textarea
-            id="description"
             name="description"
             class="materialize-textarea"
           >Пусто</textarea>
@@ -183,7 +180,7 @@
 
         <li>
           <div class="myContainer m10-l w6em">
-            <input class="border_remove" type="number" name="" id="" />
+            <input class="border_remove" name="price" type="number" required />
           </div>
 
           <span>₽</span>
