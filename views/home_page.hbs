@@ -96,7 +96,7 @@
           <div class="card horizontal hoverable">
 
             <div class="card-image my-card-image">
-              <img src={{img.[0]}} alt={{title}} />
+              <img src="{{img.[0]}}" alt="{{title}}" />
             </div>
 
             <div class="card-stacked">
@@ -143,24 +143,3 @@
   </section>
 
 {{/if}}
-
-{{!-- {{#if @root.isAuth}}
-  <div class="card-action">
-
-
-    <form action="/favourite/add" method="POST">
-      <input type="hidden" name="id" value="{{_id}}" />
-
-      <button
-        onclick="M.toast({html: 'Добавлено в избранное'})"
-        type="submit"
-        class="waves-effect waves-teal btn-flat"
-      >
-        <i class="fa fa-heart" style="color: #e91e63;"></i>
-
-      </button>
-    </form>
-
-  </div>
-
-{{/if}} --}}

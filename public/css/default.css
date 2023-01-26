@@ -55,6 +55,7 @@ input#price_upper {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding: 20px 0;
 }
 
 .price_css {
@@ -104,7 +105,7 @@ li {
   -webkit-flex-direction: row !important;
   -ms-flex-direction: row !important;
   flex-direction: row !important;
-  margin-bottom: 16px !important;
+  /* margin-bottom: 16px !important; */
   font-size: 16px !important;
   line-height: 22px !important;
   list-style: none !important;
@@ -116,8 +117,6 @@ li {
   flex-direction: row !important;
   align-items: flex-start !important;
 }
-
-
 
 .card.horizontal .card-image {
   max-width: none !important;

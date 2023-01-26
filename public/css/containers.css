@@ -4,7 +4,7 @@
   padding: 0 10px;
   margin: 10px;
 }
-.myContainer:hover {
+.myContainer:focus-within {
   border: 2px solid #ffcf26;
   margin: 9px;
 }

@@ -17,28 +17,22 @@ router.get("/", auth, (req, res) => {
 
 router.post("/", auth, async (req, res) => {
   try {
-    console.log("req.body");
-    console.log(req.body);
+    if (req.files) {
+      var paths = req.files.map((file) => "/" + file.path);
+    }
 
-    console.log("req.files");
-    console.log(req.files);
+    const item = new ItemModel({
+      title: req.body.title,
+      price: req.body.price,
+      img: paths,
+      num_rooms: req.body.num_rooms,
+      space: req.body.space,
+      description: req.body.description,
+      type: req.body.type,
+      userId: req.user._id,
+    });
 
-    // if (req.files) {
-    //   var paths = req.files.map((file) => "/" + file.path);
-    // }
-
-    // const item = new ItemModel({
-    //   title: req.body.title,
-    //   price: req.body.price,
-    //   img: paths,
-    //   num_rooms: req.body.num_rooms,
-    //   space: req.body.space,
-    //   description: req.body.description,
-    //   type: req.body.type,
-    //   userId: req.user._id,
-    // });
-
-    // await item.save();
+    await item.save();
     res.redirect("/add");
     //
   } catch (error) {

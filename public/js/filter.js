@@ -32,7 +32,7 @@ async function filter() {
               <div class="card horizontal hoverable">
 
                 <div class="card-image my-card-image">
-                  <img src="${e.img}" alt="${e.title}" />
+                  <img src="${e.img[0]}" alt="${e.title}" />
                 </div>
 
                 <div class="card-stacked">

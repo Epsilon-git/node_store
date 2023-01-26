@@ -16,7 +16,7 @@
           <div class="card horizontal hoverable">
 
             <div class="card-image my-card-image">
-              <img src="{{img}}" alt="{{title}}" />
+              <img src="{{img.[0]}}" alt="{{title}}" />
             </div>
 
             <div class="card-stacked" style="justify-content: space-between">
@@ -77,58 +77,3 @@
     <h5 class="m100">Опубликованных объявлений пока нет</h5>
   </section>
 {{/if}}
-
-{{!--
-
-  {{#if items.length}}
-
-    <div class="row">
-
-      {{#each items}}
-
-        <div class="item col s12 m4 l4">
-
-          {{! Карочтка  }}
-          <div class="card">
-
-            <div class="card-image">
-              <img src="{{img}}" alt="{{title}}" />
-            </div>
-
-            {{! Содержимое }}
-            <div class="card-content">
-              <h5>{{title}}</h5>
-              <p>{{type}}</p>
-              <p>{{num_rooms}} комнат(а)</p>
-              <p>{{space}} м<sup>2</sup></p>
-              <p class="price">{{price}}</p>
-            </div>
-            {{!  }}
-
-            {{! Поле для действий }}
-            <div class="card-action">
-              <a href="/items/{{_id}}/edit?allow=true">Редактировать</a>
-
-              <form action="/items/remove" method="POST">
-                <input type="hidden" name="id" value="{{_id}}" />
-                <button
-                  class="btn btn-primary red darken-4 valign-wrapper"
-                >Удалить</button>
-              </form>
-            </div>
-            {{!  }}
-
-          </div>
-          {{!  }}
-
-        </div>
-
-      {{/each}}
-
-    </div>
-
-  {{else}}
-    <p>Объявлений пока нет</p>
-  {{/if}}
-
- --}}

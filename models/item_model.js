@@ -1,19 +1,25 @@
 const { Schema, model } = require("mongoose");
 
 const itemSchema = new Schema({
-  title: String,
+  title: String, // Заголовок объявления
 
-  price: Number,
+  type: String, // Тип недвижимости
 
-  type: String,
+  num_rooms: String, //  Количество комнат
 
-  num_rooms: String,
+  repair: String, //  Ремонт
 
-  space: Number,
+  level: Number, //  Этаж
 
-  description: String,
+  total_level: Number, // Всего этажей
 
-  img: [String],
+  space: Number, // Площадь
+
+  description: String, // Описание
+
+  img: [String], // Фотографии
+
+  price: Number, // Цена
 
   userId: {
     type: Schema.Types.ObjectId,
