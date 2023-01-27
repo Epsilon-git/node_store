@@ -92,7 +92,7 @@ async function start() {
 
     // запуск приложения
     app.listen(PORT, () => {
-      console.log(`Server is running on http://localhost:${PORT}/`);
+      console.log(`Сервер запущен на http://localhost:${PORT}/`);
     });
     //
   } catch (error) {

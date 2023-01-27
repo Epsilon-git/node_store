@@ -6,6 +6,7 @@ $(document).ready(function () {
     items: 1,
     nav: false,
     dots: true,
+    autoWidth: true,
   });
 });
 
@@ -14,5 +15,6 @@ $(document).ready(function () {
     items: 1,
     nav: false,
     dots: false,
+    autoWidth: true,
   });
 });

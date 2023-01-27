@@ -50,7 +50,11 @@ router.get("/filter/", async (req, res) => {
 router.get("/item/:id", async (req, res) => {
   var qwe = await ItemModel.findById(req.params.id).lean();
 
+  //
+  console.log("===================");
   console.log(qwe);
+  console.log("===================");
+  //
 
   res.render("item_page", {
     item: await ItemModel.findById(req.params.id).lean(),

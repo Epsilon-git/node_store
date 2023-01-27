@@ -5,7 +5,7 @@ async function filter() {
   const type = $("select#type").val();
 
   const price_lower = $("#price_lower").val();
-  console.log(price_lower);
+
   const price_upper = $("#price_upper").val();
 
   let response = await fetch(

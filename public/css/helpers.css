@@ -1,3 +1,8 @@
+.maxH3rem{
+  max-height: 3rem;
+}
+
+
 .h100 {
   height: 100% !important;
 }

@@ -3,12 +3,12 @@ const router = Router();
 const bcrypt = require("bcryptjs");
 const UserModel = require("../models/user_model");
 
-router.get("/login", async (req, res) => {
-  res.render("/", {
-    loginError: req.flash("loginError"),
-    regError: req.flash("regError"),
-  });
-});
+// router.get("/", async (req, res) => {
+//   res.render("/", {
+//     loginError: req.flash("loginError"),
+//     regError: req.flash("regError"),
+//   });
+// });
 
 router.get("/logout", async (req, res) => {
   req.session.destroy(() => {
@@ -35,11 +35,11 @@ router.post("/login", async (req, res) => {
         });
       } else {
         req.flash("loginError", "Неверный пароль");
-        res.redirect("/login#login");
+        res.redirect("/");
       }
     } else {
       req.flash("loginError", "Такого пользователя не существует");
-      res.redirect("/login#login");
+      res.redirect("/");
     }
   } catch (error) {
     console.log("ОШИБКА -> " + error);

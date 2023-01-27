@@ -21,14 +21,21 @@ router.post("/", auth, async (req, res) => {
       var paths = req.files.map((file) => "/" + file.path);
     }
 
+    console.log(req.body);
+
     const item = new ItemModel({
       title: req.body.title,
-      price: req.body.price,
-      img: paths,
+      type: req.body.type,
       num_rooms: req.body.num_rooms,
+      repair: req.body.repair,
+      level: req.body.level,
+      total_level: req.body.total_level,
       space: req.body.space,
       description: req.body.description,
-      type: req.body.type,
+      price: req.body.price,
+      //
+      img: paths,
+      //
       userId: req.user._id,
     });
 
