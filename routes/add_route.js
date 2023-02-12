@@ -3,9 +3,9 @@ const ItemModel = require("../models/item_model");
 const auth = require("../middleware/auth");
 const router = Router();
 
-const type = ["Квартира", "Квартира в новостройке", "Дом/Дача", "Коттедж"];
-const num_rooms = ["1", "2", "3", "4", "5 и более"];
-const repair = ["Косметический", "Евро", "Дизайнерский", "Без ремонта"];
+const type = require("../res/type");
+const repair = require("../res/repair");
+const num_rooms = require("../res/num_rooms");
 
 router.get("/", auth, (req, res) => {
   res.render("add_page", {

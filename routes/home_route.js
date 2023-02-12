@@ -2,10 +2,18 @@ const { Router } = require("express");
 const ItemModel = require("../models/item_model");
 const router = Router();
 
+const type = require("../res/type");
+const repair = require("../res/repair");
+const num_rooms = require("../res/num_rooms");
+
 router.get("/", async (req, res) => {
   const items = await ItemModel.find().populate("userId", "email name").lean();
 
   res.render("home_page", {
+    type: type,
+    num_rooms: num_rooms,
+    repair: repair,
+
     items,
   });
 });

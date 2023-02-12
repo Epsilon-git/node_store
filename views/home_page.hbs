@@ -10,8 +10,9 @@
         <select id="type" name="type">
           <option value="" disabled selected>Тип недвижимости</option>
           <option value="Все">Все</option>
-          <option value="Квартира">Квартира</option>
-          <option value="Дом">Дом</option>
+          {{#each type}}
+            <option value="{{this}}">{{this}}</option>
+          {{/each}}
         </select>
       </div>
     </div>
@@ -23,11 +24,23 @@
         <select id="num_rooms" name="num_rooms">
           <option value="" disabled selected>Кол-во комнат</option>
           <option value="Все">Все</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5 и более</option>
+          {{#each num_rooms}}
+            <option value="{{this}}">{{this}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+    {{!  }}
+
+    {{! Кол-во комнат }}
+    <div class="myContainer">
+      <div class="input-field m0">
+        <select id="repair" name="repair">
+          <option value="" disabled selected>Ремонт</option>
+          <option value="Все">Все</option>
+          {{#each repair}}
+            <option value="{{this}}">{{this}}</option>
+          {{/each}}
         </select>
       </div>
     </div>
@@ -103,31 +116,59 @@
 
               <div class="card-content" style="font-size: 25px;">
 
-                <div class="col s12">
-                  {{space}}м<sup>2</sup>,
-                  {{title}}
-                </div>
+                <section class="section">
 
-                <div class="row">
+                  <div class="row">
 
-                  <div class="col s6">
-                    {{type}}
-                    <br />
-                    {{num_rooms}}
-                    комнат(а)
+                    <div class="col s6">
+                      {{title}}
+                    </div>
+
+                    <div class="col s6 align-c price">
+                      {{price}}
+                    </div>
+
                   </div>
 
-                  <div class="col s6 align-c price">
-                    {{price}}
+                  <div class="p10">
+
+                    <li>
+                      <span class="span_title">Тип</span>
+                      <span class="span_text">{{type}}</span>
+                    </li>
+
+                    <li>
+                      <span class="span_title">Площадь комнат</span>
+                      <span class="span_text">{{space}} м²</span>
+                    </li>
+
+                    <li>
+                      <span class="span_title">Комнат</span>
+                      <span class="span_text">{{num_rooms}}</span>
+                    </li>
+
+                    <li>
+                      <span class="span_title">Этаж</span>
+                      <span class="span_text">{{level}}
+                        из
+                        {{total_level}}</span>
+                    </li>
+
+                    <li>
+                      <span class="span_title">Ремонт</span>
+                      <span class="span_text">{{repair}}</span>
+                    </li>
+
                   </div>
 
-                </div>
+                </section>
 
               </div>
 
             </div>
 
           </div>
+
         </a>
       </div>
 
