@@ -21,6 +21,8 @@ const itemSchema = new Schema({
 
   price: Number, // Цена
 
+  views_num: Number, // Кол-во просмотров 
+
   userId: {
     type: Schema.Types.ObjectId,
     ref: "users",

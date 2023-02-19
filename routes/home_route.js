@@ -56,30 +56,16 @@ router.get("/filter/", async (req, res) => {
 });
 
 router.get("/item/:id", async (req, res) => {
-  var qwe = await ItemModel.findById(req.params.id).lean();
-
-  //
-  console.log("===================");
-  console.log(qwe);
-  console.log("===================");
-  //
+  var item = await ItemModel.findById(req.params.id).lean();
 
   res.render("item_page", {
-    item: await ItemModel.findById(req.params.id).lean(),
+    item: item,
+    avg_price: Math.round(item.price / item.space),
   });
-});
 
-router.get("/maxPrice/", async (req, res) => {
-  var item = await ItemModel.findOne()
-    .sort("-price")
-    .select("price -_id")
-    .lean();
-
-  if (item !== null) {
-    res.status(200).json(item.price);
-  } else {
-    res.status(200).json();
-  }
+  await ItemModel.findByIdAndUpdate(item._id, {
+    views_num: (item.views_num += 1),
+  });
 });
 
 module.exports = router;
