@@ -72,7 +72,7 @@ a {
 
 /*  */
 .my-card-image {
-  height: 300px !important;
+  /* height: 300px !important; */
   width: 300px !important;
 }
 
@@ -127,4 +127,8 @@ input.border_remove:focus {
   border-bottom: 0 transparent !important;
   box-shadow: 0 transparent !important;
   height: 2rem !important;
+}
+
+.card-content {
+  padding: 5px 24px !important;
 }

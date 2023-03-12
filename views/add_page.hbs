@@ -23,12 +23,18 @@
         <h4>Выберите тип недвижимости</h4>
 
         {{#each type}}
+
           <p>
             <label class="m10-l">
-              <input name="type" type="radio" value="{{this}}" checked />
+              {{#ifeq @index 0}}
+                <input name="type" type="radio" value="{{this}}" checked />
+              {{else}}
+                <input name="type" type="radio" value="{{this}}" />
+              {{/ifeq}}
               <span>{{this}}</span>
             </label>
           </p>
+
         {{/each}}
 
       </section>
@@ -43,7 +49,12 @@
         {{#each num_room}}
           <p>
             <label class="m10-l">
-              <input name="num_rooms" type="radio" value="{{this}}" checked />
+              {{#ifeq @index 0}}
+                <input name="num_rooms" type="radio" value="{{this}}" checked />
+              {{else}}
+                <input name="num_rooms" type="radio" value="{{this}}" />
+              {{/ifeq}}
+
               <span>{{this}}</span>
             </label>
           </p>
@@ -62,7 +73,12 @@
 
           <p>
             <label class="m10-l">
-              <input name="repair" type="radio" value="{{this}}" checked />
+              {{#ifeq @index 0}}
+                <input name="repair" type="radio" value="{{this}}" checked />
+              {{else}}
+                <input name="repair" type="radio" value="{{this}}" />
+              {{/ifeq}}
+
               <span>{{this}}</span>
             </label>
           </p>
@@ -138,6 +154,7 @@
 
         <div class="input-field m10">
           <textarea
+            id="description"
             name="description"
             class="materialize-textarea"
           >Пусто</textarea>

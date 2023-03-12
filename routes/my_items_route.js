@@ -3,6 +3,10 @@ const ItemModel = require("../models/item_model");
 const auth = require("../middleware/auth");
 const router = Router();
 
+const type = require("../res/type");
+const repair = require("../res/repair");
+const num_rooms = require("../res/num_rooms");
+
 router.get("/", auth, async (req, res) => {
   const items = await ItemModel.find({ userId: { _id: req.user._id } })
     .populate("userId", "_id")
@@ -29,6 +33,9 @@ router.get("/:id/edit", auth, async (req, res) => {
   res.render("item_edit_page", {
     title: `Редактировать ${item.title}`,
     item,
+    type: type,
+    num_room: num_rooms,
+    repair: repair,
   });
 });
 
@@ -37,6 +44,7 @@ router.post("/edit", auth, async (req, res) => {
   delete req.body.id;
 
   await ItemModel.findByIdAndUpdate(id, req.body).lean();
+
   res.redirect("/items");
 });
 

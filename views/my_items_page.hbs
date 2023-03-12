@@ -11,37 +11,99 @@
 
       <div class="item">
 
-        <a href="/items/{{_id}}/edit?allow=true">
+        <a href="/item/{{_id}}">
 
           <div class="card horizontal hoverable">
 
-            <div class="card-image my-card-image">
-              <img src="{{img.[0]}}" alt="{{title}}" />
-            </div>
+            {{#each img}}
+              {{#ifeq @index 0}}
+                <div class="card-image my-card-image">
+                  <img src="{{this}}" alt="{{title}}" />
+                </div>
+              {{/ifeq}}
+            {{/each}}
 
-            <div class="card-stacked" style="justify-content: space-between">
+            <div class="card-stacked">
 
               <div class="card-content" style="font-size: 25px;">
 
-                <div class="col s12">
-                  {{space}}м<sup>2</sup>,
-                  {{title}}
-                </div>
+                <section class="section">
 
-                <div class="row">
+                  <div class="row">
 
-                  <div class="col s6">
-                    {{type}}
-                    <br />
-                    {{num_rooms}}
-                    комнат(а)
+                    <div class="col s6">
+                      {{title}}
+                    </div>
+
+                    <div class="col s6 align-c price">
+                      {{price}}
+                    </div>
+
                   </div>
 
-                  <div class="col s6 align-c price">
-                    {{price}}
+                  <div class="p10">
+
+                    <li>
+                      <span class="span_title">Тип</span>
+                      <span class="span_text">{{type}}</span>
+                    </li>
+
+                    <li>
+                      <span class="span_title">Площадь комнат</span>
+                      <span class="span_text">{{space}} м²</span>
+                    </li>
+
+                    <li>
+                      <span class="span_title">Комнат</span>
+                      <span class="span_text">{{num_rooms}}</span>
+                    </li>
+
+                    <li>
+                      <span class="span_title">Этаж</span>
+                      <span class="span_text">{{level}}
+                        из
+                        {{total_level}}</span>
+                    </li>
+
+                    <li>
+                      <span class="span_title">Ремонт</span>
+                      <span class="span_text">{{repair}}</span>
+                    </li>
+
                   </div>
 
-                </div>
+                </section>
+
+                {{! Статус объявления }}
+
+                {{#ifeq status "проверяется"}}
+                  <div
+                    class="circularContainer blue"
+                    style="background-color: #2196f3;"
+                  >
+                    {{status}}
+                  </div>
+                {{/ifeq}}
+
+                {{#ifeq status "одобрено"}}
+                  <div
+                    class="circularContainer"
+                    style="background-color: #009688;"
+                  >
+                    {{status}}
+                  </div>
+                {{/ifeq}}
+
+                {{#ifeq status "отклонено"}}
+                  <div
+                    class="circularContainer"
+                    style="background-color: #f44336;"
+                  >
+                    {{status}}
+                  </div>
+                {{/ifeq}}
+
+                {{!  }}
 
               </div>
 
@@ -63,6 +125,7 @@
             </div>
 
           </div>
+
         </a>
       </div>
 

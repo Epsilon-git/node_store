@@ -1,6 +1,8 @@
 const { Schema, model } = require("mongoose");
 
 const itemSchema = new Schema({
+  status: String, // статус (проверяется/одобрено/отклонено)
+
   title: String, // Заголовок объявления
 
   type: String, // Тип недвижимости
@@ -21,7 +23,7 @@ const itemSchema = new Schema({
 
   price: Number, // Цена
 
-  views_num: Number, // Кол-во просмотров 
+  views_num: Number, // Кол-во просмотров
 
   userId: {
     type: Schema.Types.ObjectId,

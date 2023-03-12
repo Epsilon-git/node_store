@@ -1,119 +1,213 @@
-<h3>Редактировать {{item.title}}</h3>
+<h1 style="color: white;">
+  Новое объявление
+</h1>
 
-<form action="/items/edit" method="POST">
-  {{! Название }}
-  <div class="input-field">
-    <i class="material-icons prefix">title</i>
-    <input
-      id="title"
-      name="title"
-      type="text"
-      class="validate"
-      value="{{item.title}}"
-      required
-    />
-    <label for="title">Название</label>
-    <span class="helper-text" data-error="Введите название"></span>
-  </div>
-  {{!  }}
+<div class="my_container">
 
-  <div class="divider"></div>
+  <section class="section">
 
-  {{! Цена }}
-  <div class="input-field">
-    <i class="material-icons prefix">account_balance_wallet</i>
-    <input
-      id="price"
-      name="price"
-      type="number"
-      class="validate"
-      value="{{item.price}}"
-      min="1"
-      max="999999999"
-      required
-    />
-    <label for="price">Цена</label>
-    <span class="helper-text" data-error="Введите цену"></span>
-  </div>
-  {{!  }}
+    <form action="/items/edit" method="POST" enctype="multipart/form-data">
 
-  <div class="divider"></div>
+      {{! Заголовок объявления }}
+      <section>
+        <h4>Заголовок объявления</h4>
 
-  {{! Тип }}
-  <div class="input-field">
-    <select id="type" name="type">
-      <option value="Квартира" selected>Квартира</option>
-      <option value="Дом">Дом</option>
-    </select>
-    <label>Тип</label>
-  </div>
-  {{!  }}
+        <input class="m10-l" name="title" value="{{item.title}}" required />
+      </section>
+      {{!  }}
 
-  <div class="divider"></div>
+      <div class="divider m10"></div>
 
-  {{! Кол-во комнат }}
-  <div class="input-field">
-    <select id="num_rooms" name="num_rooms">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 и более</option>
-    </select>
-    <label>Кол-во комнат</label>
-  </div>
-  {{!  }}
+      {{! Выберите тип недвижимости }}
+      <section>
+        <h4>Выберите тип недвижимости</h4>
 
-  <div class="divider"></div>
+        {{#each type}}
+          <p>
+            <label class="m10-l">
+              <input name="type" type="radio" value="{{this}}" checked />
+              <span>{{this}}</span>
+            </label>
+          </p>
+        {{/each}}
 
-  {{! Площадь }}
-  <div class="input-field">
-    <input
-      id="space"
-      name="space"
-      type="number"
-      class="validate"
-      value="{{item.space}}"
-      min="1"
-      required
-    />
-    <label for="space">Площадь м<sup>2</sup></label>
-    <span class="helper-text" data-error="Введите площадь"></span>
-  </div>
-  {{!  }}
+      </section>
+      {{!  }}
 
-  <div class="divider"></div>
+      <div class="divider m10"></div>
 
-  {{! Описание }}
-  <div class="input-field">
-    <textarea
-      id="description"
-      name="description"
-      class="materialize-textarea"
-    >{{item.description}}</textarea>
-    <label for="description">Описание</label>
-  </div>
-  {{!  }}
+      {{! Количество комнат }}
+      <section>
+        <h4>Количество комнат</h4>
 
-  <div class="divider"></div>
+        {{#each num_room}}
+          <p>
+            <label class="m10-l">
+              <input name="num_rooms" type="radio" value="{{this}}" checked />
+              <span>{{this}}</span>
+            </label>
+          </p>
+        {{/each}}
 
-  {{! URL картинки }}
-  <div class="input-field">
-    <i class="material-icons prefix">image</i>
-    <input
-      id="img"
-      name="img"
-      type="text"
-      class="validate"
-      value="{{item.img}}"
-    />
-    <label for="img">URL картинки</label>
-    <span class="helper-text" data-error="Введите url картинки"></span>
-  </div>
-  {{! -------------------------------------------------- }}
+      </section>
+      {{!  }}
 
-  <input type="hidden" name="id" value="{{item._id}}" />
+      <div class="divider m10"></div>
 
-  <button type="submit" class="btn btn-primary">Редактировать</button>
+      {{! Ремонт }}
+      <section>
+        <h4>Ремонт</h4>
 
-</form>
+        {{#each repair}}
+
+          <p>
+            <label class="m10-l">
+              <input name="repair" type="radio" value="{{this}}" checked />
+              <span>{{this}}</span>
+            </label>
+          </p>
+
+        {{/each}}
+
+      </section>
+      {{!  }}
+
+      <div class="divider m10"></div>
+
+      {{! Об объекте }}
+      <section class="section">
+        <h4>Об объекте</h4>
+
+        <div class="m10-l">
+
+          {{! Этаж }}
+          <li>
+            <span class="span_title">Этаж</span>
+            <div class="myContainer">
+              <input
+                class="border_remove w4em"
+                type="number"
+                name="level"
+                value="{{item.level}}"
+                required
+              />
+            </div>
+          </li>
+          {{!  }}
+
+          {{! Всего этажей }}
+          <li>
+            <span class="span_title">Всего этажей</span>
+            <div class="myContainer">
+              <input
+                class="border_remove w4em"
+                type="number"
+                name="total_level"
+                value="{{item.total_level}}"
+                required
+              />
+            </div>
+          </li>
+          {{!  }}
+
+          {{! Площадь }}
+          <li>
+            <span class="span_title">Площадь</span>
+
+            <div class="myContainer">
+              <input
+                class="border_remove w4em"
+                type="number"
+                name="space"
+                value="{{item.space}}"
+                required
+              />
+            </div>
+
+            <span>м²</span>
+          </li>
+          {{!  }}
+
+        </div>
+
+      </section>
+      {{!  }}
+
+      <div class="divider m10"></div>
+
+      {{! Описание }}
+      <section>
+        <h4>Описание</h4>
+
+        <div class="input-field m10">
+          <textarea
+            id="description"
+            name="description"
+            class="materialize-textarea"
+          >{{item.description}}</textarea>
+        </div>
+
+      </section>
+      {{!  }}
+
+      <div class="divider m10"></div>
+
+      {{! Фотографии }}
+      <section>
+        <h4>Фотографии</h4>
+
+        <div class="file-field input-field">
+
+          <div class="btn">
+            <span>Загрузить</span>
+            <input type="file" name="img" multiple />
+
+          </div>
+          <div class="file-path-wrapper">
+            <input
+              class="file-path validate"
+              type="text"
+              placeholder="Загрузите один или несколько файлов"
+              required
+            />
+          </div>
+        </div>
+
+      </section>
+      {{!  }}
+
+      <div class="divider m10"></div>
+
+      {{! Цена }}
+      <section>
+        <h4>Цена</h4>
+
+        <li>
+          <div class="myContainer m10-l w6em">
+            <input
+              class="border_remove"
+              name="price"
+              type="number"
+              value="{{item.price}}"
+              required
+            />
+          </div>
+
+          <span>₽</span>
+
+        </li>
+
+      </section>
+      {{!  }}
+
+      <div class="divider m10"></div>
+
+      <button class="btn btn-primary">
+        Редактировать
+      </button>
+
+    </form>
+
+  </section>
+
+</div>

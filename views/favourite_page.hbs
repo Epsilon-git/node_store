@@ -13,62 +13,92 @@
 
         <div class="item">
 
-          <div class="card horizontal hoverable">
+          <a href="/item/{{_id}}">
 
-            <a href="/item/{{id}}">
-              <div class="card-image my-card-image">
-                <img src="{{img.[0]}}" alt="{{title}}" />
-              </div>
-            </a>
+            <div class="card horizontal hoverable">
 
-            <div class="card-stacked" style="justify-content: space-between">
+              {{#each img}}
+                {{#ifeq @index 0}}
+                  <div class="card-image my-card-image">
+                    <img src="{{this}}" alt="{{title}}" />
+                  </div>
+                {{/ifeq}}
+              {{/each}}
 
-              <a href="/item/{{id}}">
+              <div class="card-stacked">
+
                 <div class="card-content" style="font-size: 25px;">
 
-                  <div class="col s12">
-                    {{space}}м<sup>2</sup>,
-                    {{title}}
-                  </div>
+                  <section class="section">
 
-                  <div class="row">
+                    <div class="row">
 
-                    <div class="col s6">
-                      {{type}}
-                      <br />
-                      {{num_rooms}}
-                      комнат(а)
+                      <div class="col s6">
+                        {{title}}
+                      </div>
+
+                      <div class="col s6 align-c price">
+                        {{price}}
+                      </div>
+
                     </div>
 
-                    <div class="col s6 align-c price">
-                      {{price}}
+                    <div class="p10">
+
+                      <li>
+                        <span class="span_title">Тип</span>
+                        <span class="span_text">{{type}}</span>
+                      </li>
+
+                      <li>
+                        <span class="span_title">Площадь комнат</span>
+                        <span class="span_text">{{space}} м²</span>
+                      </li>
+
+                      <li>
+                        <span class="span_title">Комнат</span>
+                        <span class="span_text">{{num_rooms}}</span>
+                      </li>
+
+                      <li>
+                        <span class="span_title">Этаж</span>
+                        <span class="span_text">{{level}}
+                          из
+                          {{total_level}}</span>
+                      </li>
+
+                      <li>
+                        <span class="span_title">Ремонт</span>
+                        <span class="span_text">{{repair}}</span>
+                      </li>
+
                     </div>
 
-                  </div>
+                  </section>
 
                 </div>
-              </a>
 
-              <div class="card-action align-r">
+                <div class="card-action align-r">
 
-                <button
-                  class="btn js-remove tooltipped transparent"
-                  data-id="{{id}}"
-                  data-position="bottom"
-                  data-tooltip="Удалить из избранных"
-                >
-                  <i
-                    class="fa-solid fa-heart-circle-xmark"
-                    style="color: #b71c1c;"
-                  ></i>
-                </button>
+                  <button
+                    class="btn js-remove tooltipped transparent"
+                    data-id="{{id}}"
+                    data-position="bottom"
+                    data-tooltip="Удалить из избранных"
+                  >
+                    <i
+                      class="fa-solid fa-heart-circle-xmark"
+                      style="color: #b71c1c;"
+                    ></i>
+                  </button>
+
+                </div>
 
               </div>
 
             </div>
 
-          </div>
-
+          </a>
         </div>
 
       {{/each}}
@@ -82,30 +112,3 @@
   {{/if}}
 
 </div>
-
-{{!-- <table>
-      <thead>
-        <tr>
-          <th>Название</th>
-          <th>Цена</th>
-          <th>Действия</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each favourite}}
-          <tr>
-            <td>{{title}}</td>
-            <td>{{price}}</td>
-            <td>
-              <button
-                class="btn btn-small red darken-4 js-remove"
-                data-id="{{id}}"
-              >
-                <i class="fa-solid fa-heart-circle-xmark"></i>
-              </button>
-              <a href="/item/{{id}}">Подробнее</a>
-            </td>
-          </tr>
-        {{/each}}
-      </tbody>
-    </table> --}}

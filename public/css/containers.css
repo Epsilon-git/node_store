@@ -1,17 +1,29 @@
 .myContainer {
+  display: inline-block;
   border: 1px solid gray;
   border-radius: 8px;
   padding: 0 10px;
   margin: 10px;
 }
 .myContainer:focus-within {
+  display: inline-block;
   border: 2px solid #ffcf26;
   margin: 9px;
 }
 
 .myContainer2 {
+  display: inline-block;
   border: 1px solid gray;
   border-radius: 8px;
   padding: 0 10px;
   margin: 10px;
+}
+
+.circularContainer {
+  display: inline-block;
+  border-radius: 330px;
+  padding: 0 10px;
+  margin: 10px;
+  color: white;
+  font-size: smaller;
 }

@@ -20,6 +20,7 @@ const itemsRoute = require("./routes/my_items_route");
 const addRoute = require("./routes/add_route");
 const favouriteRoute = require("./routes/favourite_route");
 const authRoute = require("./routes/auth_route");
+const adminRoute = require("./routes/admin_route");
 
 //
 // какие то константы
@@ -30,6 +31,7 @@ const app = express();
 const hbs = exphbs.create({
   defaultLayout: "main_layout",
   extname: "hbs",
+  helpers: require("./utils/hbs-helpers"),
 });
 //
 // настройка сессии которая храниться в базе данных
@@ -72,6 +74,7 @@ app.use("/items", itemsRoute);
 app.use("/add", addRoute);
 app.use("/favourite", favouriteRoute);
 app.use("/auth", authRoute);
+app.use("/admin", adminRoute);
 
 //
 app.use(errorHandler);

@@ -24,6 +24,8 @@ router.post("/", auth, async (req, res) => {
     console.log(req.body);
 
     const item = new ItemModel({
+      status: "проверяется",
+      //
       title: req.body.title,
       type: req.body.type,
       num_rooms: req.body.num_rooms,

@@ -59,5 +59,7 @@ $(document).ready(function () {
   }
 
   M.textareaAutoResize($("#description"));
+
+  
   // $("input#input_text, textarea#description").characterCounter();
 });

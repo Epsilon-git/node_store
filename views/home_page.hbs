@@ -108,9 +108,13 @@
 
           <div class="card horizontal hoverable">
 
-            <div class="card-image my-card-image">
-              <img src="{{img.[0]}}" alt="{{title}}" />
-            </div>
+            {{#each img}}
+              {{#ifeq @index 0}}
+                <div class="card-image my-card-image">
+                  <img src="{{this}}" alt="{{title}}" />
+                </div>
+              {{/ifeq}}
+            {{/each}}
 
             <div class="card-stacked">
 
