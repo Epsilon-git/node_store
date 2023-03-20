@@ -25,5 +25,9 @@
   padding: 0 10px;
   margin: 10px;
   color: white;
-  font-size: smaller;
+}
+
+.tabs-vertical {
+  flex-direction: column !important;
+  height: auto !important;
 }

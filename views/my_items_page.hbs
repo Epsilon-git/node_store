@@ -15,13 +15,46 @@
 
           <div class="card horizontal hoverable">
 
-            {{#each img}}
-              {{#ifeq @index 0}}
-                <div class="card-image my-card-image">
+            <div class="card-image my-card-image" style="position: relative;">
+
+              {{#each img}}
+                {{#ifeq @index 0}}
                   <img src="{{this}}" alt="{{title}}" />
+                {{/ifeq}}
+              {{/each}}
+
+              {{! Статус объявления }}
+
+              {{#ifeq status "проверяется"}}
+                <div
+                  class="circularContainer absolute"
+                  style="background-color: #2196f3;"
+                >
+                  {{status}}
                 </div>
               {{/ifeq}}
-            {{/each}}
+
+              {{#ifeq status "одобрено"}}
+                <div
+                  class="circularContainer absolute"
+                  style="background-color: #009688;"
+                >
+                  {{status}}
+                </div>
+              {{/ifeq}}
+
+              {{#ifeq status "отклонено"}}
+                <div
+                  class="circularContainer absolute"
+                  style="background-color: #f44336;"
+                >
+                  {{status}}
+                </div>
+              {{/ifeq}}
+
+              {{!  }}
+
+            </div>
 
             <div class="card-stacked">
 
@@ -74,40 +107,22 @@
 
                 </section>
 
-                {{! Статус объявления }}
-
-                {{#ifeq status "проверяется"}}
-                  <div
-                    class="circularContainer blue"
-                    style="background-color: #2196f3;"
-                  >
-                    {{status}}
-                  </div>
-                {{/ifeq}}
-
-                {{#ifeq status "одобрено"}}
-                  <div
-                    class="circularContainer"
-                    style="background-color: #009688;"
-                  >
-                    {{status}}
-                  </div>
-                {{/ifeq}}
-
-                {{#ifeq status "отклонено"}}
-                  <div
-                    class="circularContainer"
-                    style="background-color: #f44336;"
-                  >
-                    {{status}}
-                  </div>
-                {{/ifeq}}
-
-                {{!  }}
-
               </div>
 
               <div class="card-action align-r">
+
+                {{!-- <a href="/items/{{_id}}/edit?allow=true"> --}}
+                  <button
+                    class="btn tooltipped transparent"
+                    data-position="bottom"
+                    data-tooltip="Изменить объявление"
+                  >
+                    <i
+                      class="fa-solid fa-pen-to-square"
+                      style="color: #4caf50;"
+                    ></i>
+                  </button>
+                {{!-- </a> --}}
 
                 <form action="/items/remove" method="POST">
                   <input type="hidden" name="id" value="{{_id}}" />

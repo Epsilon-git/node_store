@@ -3,7 +3,7 @@
   <div class="my_container col s8">
 
     {{!  }}
-    <section class="section">
+    <section class="section ph30">
       <h4>{{item.title}}, {{item.space}} м² </h4>
     </section>
     {{!  }}
@@ -11,7 +11,7 @@
     {{!  }}
 
     {{#if @root.isAuth}}
-      <section class="section">
+      <section class="section ph30">
 
         <form action="/favourite/add" method="POST">
           <input type="hidden" name="id" value="{{item._id}}" />
@@ -39,7 +39,7 @@
     <div class="divider m10"></div>
 
     {{!  }}
-    <section class="section p10">
+    <section class="section p30">
       <div class="owl-carousel owl-theme">
         {{#each item.img}}
           <img src={{this}} />
@@ -51,7 +51,7 @@
     {{!  }}
     <div class="divider m10"></div>
 
-    <section class="section">
+    <section class="section p30">
 
       <h5>Общая информация</h5>
 
@@ -90,7 +90,7 @@
     <div class="divider m10"></div>
 
     {{!  }}
-    <section class="section">
+    <section class="section p30">
       <h5>Описание квартиры</h5>
 
       <li class="p10">
@@ -104,7 +104,7 @@
 
   <div class="my_container col s4 m10-l">
 
-    <section class="section">
+    <section class="section p30">
 
       <span class="span_title">Интересовались {{item.views_num}} раз</span>
 

@@ -1,0 +1,63 @@
+<h1 style="color: white;">
+  Панель администратора
+</h1>
+
+<div class="row">
+
+  <div class="col s12 m4 l3">
+
+    <div class="my_container">
+
+      <div class="collection">
+
+        <a href="/admin/" class="collection-item">Все объявления</a>
+        <a href="/admin/inspection" class="collection-item">На проверке</a>
+        <a href="/admin/users" class="collection-item active">
+          Все пользователи
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="col s12 m8 l9 p10">
+
+    <div class="my_container p10">
+      <section class="section p10">
+
+        {{#if users.length}}
+
+          <div id="users" class="row p10">
+
+            {{! Карточка }}
+            {{#each users}}
+
+              <div class="item">
+
+                <li>{{name}}</li>
+                <li>{{email}}</li>
+
+                <div class="divider m10"></div>
+
+              </div>
+
+            {{/each}}
+
+          </div>
+
+          {{!  }}
+
+        {{else}}
+          <section class="my_container align-c">
+            <h5 class="m100">Пользователей не найдено</h5>
+          </section>
+        {{/if}}
+
+      </section>
+    </div>
+
+  </div>
+
+</div>

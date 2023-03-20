@@ -16,7 +16,8 @@
 .my_container {
   background-color: whitesmoke;
   border-radius: 5px;
-  padding: 0 20px !important;
+  /* padding: 0 20px !important; */
+  padding: 0 !important;
   /* margin-top: 20px; */
 }
 

@@ -21,8 +21,6 @@ router.post("/", auth, async (req, res) => {
       var paths = req.files.map((file) => "/" + file.path);
     }
 
-    console.log(req.body);
-
     const item = new ItemModel({
       status: "проверяется",
       //
@@ -35,6 +33,7 @@ router.post("/", auth, async (req, res) => {
       space: req.body.space,
       description: req.body.description,
       price: req.body.price,
+      views_num: 0,
       //
       img: paths,
       //

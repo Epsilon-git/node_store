@@ -43,7 +43,9 @@ router.post("/edit", auth, async (req, res) => {
   const { id } = req.body;
   delete req.body.id;
 
-  await ItemModel.findByIdAndUpdate(id, req.body).lean();
+  console.log(req.body);
+
+  await ItemModel.findByIdAndUpdate(id, req.body);
 
   res.redirect("/items");
 });

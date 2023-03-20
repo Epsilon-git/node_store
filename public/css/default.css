@@ -132,3 +132,7 @@ input.border_remove:focus {
 .card-content {
   padding: 5px 24px !important;
 }
+
+div.collection {
+  margin: 0 !important;
+}
