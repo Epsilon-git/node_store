@@ -136,6 +136,20 @@
 
                       <div class="card-action align-r">
 
+                        <form action="/admin/inspection" method="POST">
+                          <input type="hidden" name="id" value="{{_id}}" />
+                          <button
+                            class="btn tooltipped transparent"
+                            data-position="bottom"
+                            data-tooltip="Одобрить"
+                          >
+                            <i
+                              class="fa-solid fa-thumbs-up"
+                              style="color: #1cb5b7;"
+                            ></i>
+                          </button>
+                        </form>
+
                         <a href="/items/{{_id}}/edit?allow=true">
                           <button
                             class="btn tooltipped transparent"

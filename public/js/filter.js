@@ -25,47 +25,82 @@ async function filter() {
       const html = items
         .map((e) => {
           return `
+          <div id="items" class="row">
+      
             <div class="item">
-
-            <a href="/item/${e._id}">
-
-              <div class="card horizontal hoverable">
-
-                <div class="card-image my-card-image">
-                  <img src="${e.img[0]}" alt="${e.title}" />
-                </div>
-
-                <div class="card-stacked">
-
-                  <div class="card-content" style="font-size: 25px;">
-
-                    <div class="col s12">
-                      ${e.space}м²,
-                      ${e.title}
-                    </div>
-
-                    <div class="row">
-
-                      <div class="col s6">
-                        ${e.type}
-                        <br />
-                        ${e.num_rooms}
-                        комнат(а)
+      
+              <a href="/item/${e.id}">
+      
+                <div class="card horizontal hoverable">
+      
+                 
+                      <div class="card-image my-card-image">
+                        <img src="${e.img}" alt="${e.img}" />
                       </div>
-
-                      <div class="col s6 align-c price">
-                        ${e.price}
-                      </div>
-
+             
+      
+                  <div class="card-stacked">
+      
+                    <div class="card-content" style="font-size: 25px;">
+      
+                      <section class="section">
+      
+                        <div class="row">
+      
+                          <div class="col s6">
+                          ${e.title}
+                          </div>
+      
+                          <div class="col s6 align-c price">
+                          ${eprice}
+                          </div>
+      
+                        </div>
+      
+                        <div class="p10">
+      
+                          <li>
+                            <span class="span_title">Тип</span>
+                            <span class="span_text">${e.type}</span>
+                          </li>
+      
+                          <li>
+                            <span class="span_title">Площадь комнат</span>
+                            <span class="span_text">${e.space} м²</span>
+                          </li>
+      
+                          <li>
+                            <span class="span_title">Комнат</span>
+                            <span class="span_text">${e.num_rooms}</span>
+                          </li>
+      
+                          <li>
+                            <span class="span_title">Этаж</span>
+                            <span class="span_text">${e.level}
+                              из
+                              ${e.total_level}</span>
+                          </li>
+      
+                          <li>
+                            <span class="span_title">Ремонт</span>
+                            <span class="span_text">${e.repair}</span>
+                          </li>
+      
+                        </div>
+      
+                      </section>
+      
                     </div>
-
+      
                   </div>
-
+      
                 </div>
-
-              </div>
-            </a>
-          </div>
+      
+              </a>
+            </div>
+      
+        </div>
+      
           `;
         })
         .join("");

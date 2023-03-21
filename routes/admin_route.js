@@ -20,6 +20,20 @@ router.get("/inspection", async (req, res) => {
     items: items,
   });
 });
+
+router.post("/inspection", async (req, res) => {
+  const { id } = req.body;
+  delete req.body.id;
+
+  console.log(req.body);
+
+  // await ItemModel.findByIdAndUpdate(id, req.body);
+
+  await ItemModel.findByIdAndUpdate(id, {status: "одобрено"});
+
+  res.redirect("/admin/inspection");
+});
+
 router.get("/users", async (req, res) => {
   const users = await UserModel.find().lean();
 

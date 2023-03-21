@@ -29,5 +29,6 @@
   "devDependencies": {
     "dotenv": "^6.2.0",
     "nodemon": "^2.0.20"
-  }
+  },
+  "description": ""
 }
